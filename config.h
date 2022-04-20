@@ -11,12 +11,12 @@ static const char dmenufont[]       = "Ubuntu Mono:size=16:antialias=true:autohi
 static const char col_gray1[]       = "#1e222a";
 static const char col_gray2[]       = "#2e323a";
 static const char col_gray3[]       = "#545862";
-static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#61afef";
+static const char col_gray4[]       = "#222222";
+static const char col_custm[]        = "#ffaaaa";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan },
+	[SchemeSel]  = { col_gray4, col_custm,  col_custm },
 };
 
 /* tagging */
@@ -60,9 +60,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[]  = { "surf", "https://searx.thegpm.org/", NULL };
+static const char *browsercmd[]  = { "surf", "localhost:8888", NULL };
+static const char *browser2cmd[]  = { "firefox", "localhost:8888", NULL };
 static const char *arxivcmd[]  = { "arxiv_dmenu", NULL };
 
 static Key keys[] = {
@@ -70,6 +71,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,             		XK_o, 	   spawn,          {.v = browsercmd } },
+	{ MODKEY|ShiftMask,         XK_o, 	   spawn,          {.v = browser2cmd } },
 	{ MODKEY,             		XK_u, 	   spawn,          {.v = arxivcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
