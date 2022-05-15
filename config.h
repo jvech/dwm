@@ -64,7 +64,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "surf", "127.0.0.1:8888", NULL };
-static const char *browser2cmd[]  = { "firefox", "127.0.0.1:8888", NULL };
+static const char *browser2cmd[]  = { "firefox", "--browser", "127.0.0.1:8888", NULL };
 static const char *arxivcmd[]  = { "arxiv_dmenu", NULL };
 
 static Key keys[] = {
@@ -97,7 +97,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_plus,  setgaps,        {.i = +5 } },
-	{ MODKEY|ShiftMask,             XK_plus,  setgaps,        {.i = gappx } },
+	{ MODKEY|ShiftMask,             XK_plus,  setgaps,        {.i = 0 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
