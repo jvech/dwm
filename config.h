@@ -13,7 +13,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#222222";
-static const char col_custm[]       = "#ffaaaa";
+static const char col_custm[]       = "#aaffaa";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -67,7 +67,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *passmenucmd[] = { "passmenu", "-p", "passmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[]  = { "surf", "127.0.0.1:8888", NULL };
+static const char *browsercmd[]  = { "vimb", "127.0.0.1:8888", NULL };
 static const char *browser2cmd[]  = { "firefox", "--new-window", "127.0.0.1:8888", NULL };
 static const char *arxivcmd[]  = { "arxiv_dmenu", NULL };
 
