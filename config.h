@@ -71,7 +71,7 @@ static const char *browsercmd[]  = { "vimb", "127.0.0.1:8888", NULL };
 static const char *browser2cmd[]  = { "firefox", "--new-window", "127.0.0.1:8888", NULL };
 static const char *arxivcmd[]  = { "arxiv_dmenu", NULL };
 
-static Key keys[] = {
+static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
