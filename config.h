@@ -67,18 +67,20 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *passmenucmd[] = { "passmenu", "-p", "passmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_custm, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browsercmd[]  = { "vimb", "127.0.0.1:8888", NULL };
-static const char *browser2cmd[]  = { "firefox", "--new-window", "127.0.0.1:8888", NULL };
+static const char *browsercmd[]  = { "vimb", NULL };
+static const char *browser2cmd[]  = { "firefox", "127.0.0.1:8888", NULL };
 static const char *arxivcmd[]  = { "arxiv_dmenu", NULL };
+static const char *searxcmd[]  = { "searx_query", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,             		XK_o, 	   spawn,          {.v = browsercmd } },
-	{ MODKEY|ShiftMask,         XK_o, 	   spawn,          {.v = browser2cmd } },
-	{ MODKEY,             		XK_u, 	   spawn,          {.v = arxivcmd } },
-	{ MODKEY|ShiftMask,         XK_p, 	   spawn,          {.v = passmenucmd } },
+	{ MODKEY,             		    XK_o, 	   spawn,          {.v = browsercmd } },
+	{ MODKEY|ShiftMask,             XK_o, 	   spawn,          {.v = browser2cmd } },
+	{ MODKEY|ShiftMask,             XK_u, 	   spawn,          {.v = arxivcmd } },
+	{ MODKEY,                       XK_u, 	   spawn,          {.v = searxcmd } },
+	{ MODKEY|ShiftMask,             XK_p, 	   spawn,          {.v = passmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
